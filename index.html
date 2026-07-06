@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeXhut - গ্যাজেট, লেদার এবং ইলেকট্রনিক্স</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #008060;
+            --accent-color: #e6f4ea;
+            --text-dark: #1a1a1a;
+            --text-gray: #555;
+            --white: #ffffff;
+            --light-bg: #f8f9fa;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+            --danger: #d32f2f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 14px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-color);
+        }
+
+        .hotline {
+            background-color: #25D366;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            box-shadow: 0 2px 5px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #008060 0%, #004d40 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .btn-cta {
+            background-color: var(--white);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: var(--transition);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+        }
+
+        /* New Arrival Badge */
+        .new-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: linear-gradient(135deg, #ff6b35, #f7c948);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            z-index: 5;
+            box-shadow: 0 2px 8px rgba(255, 107, 53, 0.4);
+            animation: pulse-badge 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-badge {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eee;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background-color: #f4f4f4;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .product-details {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            font-weight: 600;
+            line-height: 1.4;
+            min-height: 48px;
+        }
+
+        .product-features {
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .product-features li {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 5px;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .product-features li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .price-box {
+            margin-top: auto;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .current-price {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .old-price {
+            font-size: 0.95rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .btn-order {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--text-dark);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: 'Hind Siliguri', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-order:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 50px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 450px;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #999;
+            line-height: 1;
+        }
+
+        .close-modal:hover { color: var(--danger); }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 10px;
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+
+        .btn-submit:hover {
+            background-color: #1ebc57;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .contact-info {
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="navbar">
+        <a class="logo" href="#">
+            <img src="https://nexhut.shop/wp-content/uploads/2026/04/Nexhut-Logo.png" alt="NeXhut Logo" />
+        </a>
+        <div class="contact-info">
+            <a href="tel:+8801580376097">📞 Helpline: +880 1580-376097</a>
+            <a href="https://wa.me/8801400047002">💬 WhatsApp: +880 1400-047002</a>
+            <span class="hotline">Order only WhatsApp</span>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <h1>গ্যাজেট, লেদার এবং ইলেকট্রনিক্সের বিশ্বস্ত দোকান</h1>
+    <p>সারা বাংলাদেশে ক্যাশ অন ডেলিভারি। মাত্র কয়েক ক্লিকেই অর্ডার করুন আপনার পছন্দের পণ্য।</p>
+    <a class="btn-cta" href="#shop">এখনই অর্ডার করুন</a>
+</section>
+
+<!-- Main Shop Section -->
+<div id="shop" class="container">
+    <h2 class="section-title">আমাদের সব পণ্যসমূহ</h2>
+    <div class="product-grid">
+
+        <!-- Product 1: 3 in 1 Charging Cable -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/444.jpg" alt="3 in 1 Charging Cable With LED Display" />
+            <div class="product-details">
+                <h3 class="product-title">3 in 1 Charging Cable With LED Display ⚡</h3>
+                <ul class="product-features">
+                    <li>✅ Micro USB, Type-C, Lightning (৩টি কানেক্টর)</li>
+                    <li>📟 স্মার্ট LED Display দেখাবে চার্জিং স্ট্যাটাস</li>
+                    <li>💪 ফাস্ট চার্জিং সাপোর্ট ও টেকসই</li>
+                    <li>🔋 সব ডিভাইস চার্জ হবে এক কেবলেই</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৩৫০</span>
+                    <span class="old-price">৳৫৫০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- ★ NEW PRODUCT 2: Surpass T24 ANC+ENC Earbuds -->
+        <article class="product-card">
+            <span class="new-badge">🔥 NEW</span>
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/07/739140502_1459270359564694_5974286968130749311_n.jpg" alt="Surpass T24 ANC+ENC Earbuds" />
+            <div class="product-details">
+                <h3 class="product-title">Surpass T24 ANC+ENC Earbuds 🎧</h3>
+                <ul class="product-features">
+                    <li>ANC (Active Noise Cancellation) – বাইরের শব্দ বলুন বিদায়</li>
+                    <li>ENC – প্রতিটি কল ক্রিস্টাল ক্লিয়ার</li>
+                    <li>🎵 শক্তিশালী সাউন্ড, গভীর বেস ও প্রিমিয়াম লিসেনিং</li>
+                    <li>💎 স্টাইলিশ ডিজাইন ও আরামদায়ক ফিট</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৯৯০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- ★ NEW PRODUCT 3: Surpass T-28 ENC Earbuds -->
+        <article class="product-card">
+            <span class="new-badge">🔥 NEW</span>
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/07/739471397_1459291356229261_1414945759540356527_n.jpg" alt="Surpass T-28 ENC True Wireless Earbuds" />
+            <div class="product-details">
+                <h3 class="product-title">Surpass T-28 ENC True Wireless Earbuds 🎧</h3>
+                <ul class="product-features">
+                    <li>🎙️ ENC Technology – নয়েজ-ফ্রি ক্লিয়ার কলিং</li>
+                    <li>🎵 Hi-Res Audio – ক্রিস্টাল ক্লিয়ার সাউন্ড</li>
+                    <li>🔋 সর্বোচ্চ 36 ঘণ্টা ব্যাটারি ব্যাকআপ</li>
+                    <li>📶 Bluetooth 5.3 – দ্রুত ও স্থিতিশীল কানেকশন</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৮৫০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- ★ NEW PRODUCT 4: Surpass Wireless 4 Pro+ Neckband -->
+        <article class="product-card">
+            <span class="new-badge">🔥 NEW</span>
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/07/738976481_1459297416228655_1467131206076183135_n.jpg" alt="Surpass Wireless 4 Pro+ ENC Neckband" />
+            <div class="product-details">
+                <h3 class="product-title">Surpass Wireless 4 Pro+ ENC Neckband 🎧</h3>
+                <ul class="product-features">
+                    <li>🔋 Up to 96 Hours Music Playtime</li>
+                    <li>⏳ Up to 500 Hours Standby Time</li>
+                    <li>🎙️ ENC Noise Cancellation – ক্রিস্টাল ক্লিয়ার কলিং</li>
+                    <li>🧲 Smart Magnetic On/Off ও IPX4 Water Resistant</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৯৯০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- ★ NEW PRODUCT 5: Surpass W135 Max Wireless Headphone -->
+        <article class="product-card">
+            <span class="new-badge">🔥 NEW</span>
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/07/739066405_1459307826227614_2018302177558638336_n.jpg" alt="Surpass W135 Max Wireless Headphone" />
+            <div class="product-details">
+                <h3 class="product-title">Surpass W135 Max Wireless Headphone 🎧</h3>
+                <ul class="product-features">
+                    <li>🔋 ৯০ ঘণ্টা পর্যন্ত Music & Talk Time</li>
+                    <li>⏳ ২০০+ ঘণ্টা Standby Time</li>
+                    <li>🎵 40mm Dynamic Speaker – Powerful Bass</li>
+                    <li>📶 Bluetooth 5.3 – দ্রুত ও স্টেবল কানেকশন</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳১৪৫০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 6: AirPods Pro 2nd Gen -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/700679147_1413637567461307_7751654891720875916_n.jpg" alt="AirPods Pro 2nd Gen" />
+            <div class="product-details">
+                <h3 class="product-title">AirPods Pro 2nd Gen H2 Black Edition</h3>
+                <ul class="product-features">
+                    <li>১০০% ANC এবং স্পেস সারাউন্ড সাউন্ড</li>
+                    <li>MagSafe এবং ওয়্যারলেস চার্জিং</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৬৯০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 7: Surpass Buds ENC -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/701286501_1414374567387607_4090668665360241315_n.jpg" alt="Surpass Buds ENC" />
+            <div class="product-details">
+                <h3 class="product-title">Surpass Buds ENC Airbuds</h3>
+                <ul class="product-features">
+                    <li>৫২ ঘণ্টার প্লে-টাইম</li>
+                    <li>IPX4 ওয়াটার প্রুফ ও 6-Mic ENC</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৭৫০</span>
+                    <span class="old-price">৳১,২৫০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 8: Surpass Neckband -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/700625560_1413648054126925_7297476650832103966_n.jpg" alt="Surpass Neckband" />
+            <div class="product-details">
+                <h3 class="product-title">Surpass Neckband Headphones</h3>
+                <ul class="product-features">
+                    <li>৯০ ঘণ্টা মিউজিক টাইম</li>
+                    <li>এনসি নয়েজ ক্যান্সেলেশন</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৭৫০</span>
+                    <span class="old-price">৳১,১০০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 9: Massage Gun -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/701087768_1413534997471564_5421349398878227153_n.jpg" alt="Massage Gun" />
+            <div class="product-details">
+                <h3 class="product-title">Massage Gun (Deep Tissue)</h3>
+                <ul class="product-features">
+                    <li>৬ স্পিড অ্যাডজাস্টেবল</li>
+                    <li>মাসল পেইন রিলিফ ও রিচার্জেবল</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳১,১৫০</span>
+                    <span class="old-price">৳২,০০০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 10: Router Stand -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/696243201_1409965224495208_7806848852522253453_n.jpg" alt="Premium Router Stand" />
+            <div class="product-details">
+                <h3 class="product-title">Premium Router Stand</h3>
+                <ul class="product-features">
+                    <li>মাল্টি-লেয়ার মেটাল স্ট্যান্ড</li>
+                    <li>টেকসই ও আধুনিক ডিজাইন</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৭৫০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 11: Fishing Digital Scale -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/699559966_1411818164309914_5109521736454456409_n.jpg" alt="Fishing Digital Scale" />
+            <div class="product-details">
+                <h3 class="product-title">Fishing Digital Scale (50kg)</h3>
+                <ul class="product-features">
+                    <li>ব্লু ব্যাকলাইট ডিসপ্লে</li>
+                    <li>মাছ, মাংস, লাগেজ ওজন মাপা যায়</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৪৯০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 12: Pure Leather Wallet -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/685793175_1402236238601440_2054698411840919175_n.jpg" alt="Pure Leather Wallet" />
+            <div class="product-details">
+                <h3 class="product-title">Pure Leather Wallet (NH-WLT-1004)</h3>
+                <ul class="product-features">
+                    <li>জিপার যুক্ত ক্যাশ কম্পার্টমেন্ট</li>
+                    <li>মাল্টিপল কার্ড স্লট</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৫৯০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 13: Boxless Buckle Belt -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/688944041_1403157245176006_6632696810512067010_n.jpg" alt="Boxless Buckle Belt" />
+            <div class="product-details">
+                <h3 class="product-title">Premium Boxless Buckle Belt</h3>
+                <ul class="product-features">
+                    <li>মডার্ন বক্সলেস ডিজাইন</li>
+                    <li>স্লিম এবং ক্লিন লুক</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৬০০</span>
+                    <span class="old-price">৳১,২০০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 14: Black Leather Belt -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/686015943_1403157241842673_394377745581733575_n.jpg" alt="Black Leather Belt" />
+            <div class="product-details">
+                <h3 class="product-title">Classic Black Leather Belt (NH-BELT-02)</h3>
+                <ul class="product-features">
+                    <li>ক্লাসিক ব্ল্যাক কালার</li>
+                    <li>ফরমাল ও ক্যাজুয়াল লুকের জন্য</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৫৫০</span>
+                    <span class="old-price">৳১,১০০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 15: Leather Belt -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/689474184_1403157231842674_4170005680869711574_n.jpg" alt="Premium Leather Belt" />
+            <div class="product-details">
+                <h3 class="product-title">Premium Leather Belt (NH-BELT-01)</h3>
+                <ul class="product-features">
+                    <li>১০০% প্রিমিয়াম লেদার</li>
+                    <li>স্টাইলিশ ফিনিশিং</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৪৫০</span>
+                    <span class="old-price">৳৯৫০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 16: Professional Wallet -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/687724978_1402103811948016_7004396153078270281_n.jpg" alt="Professional Leather Wallet" />
+            <div class="product-details">
+                <h3 class="product-title">NeXhut Leather Wallet (Professional)</h3>
+                <ul class="product-features">
+                    <li>ক্লাসি ও প্রফেশনাল লুক</li>
+                    <li>কার্ড, আইডি ও ক্যাশ স্পেস</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৪৯০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 17: Minimal Wallet -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/687750438_1402091191949278_3634692265859054315_n.jpg" alt="Minimal Leather Wallet" />
+            <div class="product-details">
+                <h3 class="product-title">Minimal Look Leather Wallet</h3>
+                <ul class="product-features">
+                    <li>স্লিম ও কমপ্যাক্ট ডিজাইন</li>
+                    <li>ম্যাক্সিমাম ইম্প্রেশন</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৫৫০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 18: Premium Style Wallet -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/687806264_1402081495283581_7891606045886095002_n.jpg" alt="NeXhut Leather Wallet" />
+            <div class="product-details">
+                <h3 class="product-title">NeXhut Leather Wallet (Premium Style)</h3>
+                <ul class="product-features">
+                    <li>১০০% অরিজিনাল লেদার</li>
+                    <li>স্মার্ট কার্ড স্লট ডিজাইন</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৫৫০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 19: Vegetable Cutter -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/681208989_1398674395624291_5556945062880072062_n.jpg" alt="GearUP VC14 Vegetable Cutter" />
+            <div class="product-details">
+                <h3 class="product-title">GearUP VC14 Premium 14-in-1 Cutter</h3>
+                <ul class="product-features">
+                    <li>স্লাইস, ডাইস, জুলিয়েন সব একসাথে</li>
+                    <li>সহজে পরিষ্কার ও স্টেইনলেস ব্লেড</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৯৫০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 20: BMW Umbrella -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/680728835_1398214299003634_3846790498920642118_n.jpg" alt="BMW Motorsport Umbrella" />
+            <div class="product-details">
+                <h3 class="product-title">BMW Motorsport Umbrella</h3>
+                <ul class="product-features">
+                    <li>অফিসিয়াল BMW ডিজাইন</li>
+                    <li>মজবুত ও স্টাইলিশ</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৬৯০</span>
+                    <span class="old-price">৳৭৮০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 21: Folding Table Fan -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/679912196_1393436802814717_2026126994905829664_n.jpg" alt="Rechargeable Folding Table Fan" />
+            <div class="product-details">
+                <h3 class="product-title">Rechargeable Folding Table Fan with LED Light</h3>
+                <ul class="product-features">
+                    <li>পাওয়ার ব্যাংক আউটপুট সুবিধা</li>
+                    <li>১৬০০mAh ব্যাটারি ও লাইট</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳১,০৫০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 22: Mini Juicer Blender -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/678296950_1391831772975220_4058422205772258926_n.jpg" alt="Mini USB Rechargeable Fruit Juicer" />
+            <div class="product-details">
+                <h3 class="product-title">Mini USB Rechargeable Fruit Juicer Blender</h3>
+                <ul class="product-features">
+                    <li>যেকোনো জায়গায় ফ্রেশ জুস</li>
+                    <li>পোর্টেবল ও ইউএসবি চার্জিং</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৭০০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 23: Thermal Flask -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/676976044_1391012273057170_6446111595755622980_n.jpg" alt="Smart 3 in 1 Thermal Flask" />
+            <div class="product-details">
+                <h3 class="product-title">Smart 3 in 1 Thermal Flask Set</h3>
+                <ul class="product-features">
+                    <li>স্মার্ট টেম্পারেচার ডিসপ্লে</li>
+                    <li>৩টি কাপ সহ সেট</li>
+                    <li>৬-১২ ঘণ্টা গরম/ঠান্ডা রাখে</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৬০০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 24: Folding Fan -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/675111901_1390991703059227_5910469662372940160_n.jpg" alt="Portable Folding Fan" />
+            <div class="product-details">
+                <h3 class="product-title">Portable Folding Fan (ZT-329)</h3>
+                <ul class="product-features">
+                    <li>ফোল্ডেবল ডিজাইন ও বিল্ট-ইন লাইট</li>
+                    <li>টাইমার ফাংশন ও ৩ স্পিড</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳১,০৫০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 25: Moving Fan -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/670159901_1386871600137904_1470483629601485216_n.jpg" alt="JY-2218 Rechargeable Moving Fan" />
+            <div class="product-details">
+                <h3 class="product-title">JY-2218 Rechargeable Moving Fan</h3>
+                <ul class="product-features">
+                    <li>১৮০° মুভিং ফ্যান</li>
+                    <li>স্ট্যান্ডিং + হ্যাঙ্গিং সুবিধা</li>
+                    <li>4000mAh ব্যাটারি ও Type-C চার্জিং</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳১,১০০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 26: Yogurt Maker -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/662561862_1377891874369210_8073846401405567313_n.jpg" alt="Samurai Electric Yogurt Maker" />
+            <div class="product-details">
+                <h3 class="product-title">Samurai Electric Yogurt Maker (1.5L)</h3>
+                <ul class="product-features">
+                    <li>ঘরেই টাটকা দই তৈরি</li>
+                    <li>বড় ১.৫ লিটার ক্যাপাসিটি</li>
+                    <li>অটোমেটিক তাপমাত্রা কন্ট্রোল</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৬৯৯</span>
+                    <span class="old-price">৳১,০৫০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 27: MNK MALL Fan -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/04/674914887_1389740349851029_7248678247313143178_n.jpg" alt="MNK MALL GS5 Handheld Fan" />
+            <div class="product-details">
+                <h3 class="product-title">MNK MALL GS5 Handheld টার্বো Fan</h3>
+                <ul class="product-features">
+                    <li>১০০ গিয়ার স্পিড কন্ট্রোল</li>
+                    <li>4000mAh ব্যাটারি (৩-৫ ঘণ্টা ব্যাকআপ)</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৬০০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 28: Cute Handheld Fan -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/04/669542550_1382842643874133_159237517252539403_n.jpg" alt="Cute Handheld Fan Night Light" />
+            <div class="product-details">
+                <h3 class="product-title">Cute Handheld Fan with Night Light (Lotso)</h3>
+                <ul class="product-features">
+                    <li>মিস্টিং ফিচার ও নাইট লাইট</li>
+                    <li>ভ্যারিয়েবল স্পিড কন্ট্রোল</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৪৫০</span>
+                    <span class="old-price">৳৭০০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 29: Panda Fan -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/669620417_1381727977318933_6857554468690907431_n.jpg" alt="Panda Key-chain Fan" />
+            <div class="product-details">
+                <h3 class="product-title">প্যান্ডা কি-চেইন ফ্যান</h3>
+                <ul class="product-features">
+                    <li>কিউট ছোট্ট পোর্টেবল ফ্যান</li>
+                    <li>USB চার্জিং সুবিধা</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৪৯০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 30: Mini Handheld Fan -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/05/666616166_1381726927319038_4751723283534307898_n.jpg" alt="MHR Mini Handheld Fan" />
+            <div class="product-details">
+                <h3 class="product-title">MHR Mini Handheld Fan (P-359)</h3>
+                <ul class="product-features">
+                    <li>সহজে বহনযোগ্য ও রিচার্জেবল</li>
+                    <li>বাসা, গাড়ি, অফিসে ব্যবহারযোগ্য</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৫০০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 31: Electric Grinder -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/04/672683424_1389811353177262_5811125074211013826_n.jpg" alt="Prestige Electric Grinder" />
+            <div class="product-details">
+                <h3 class="product-title">Prestige ইলেকট্রিক গ্রাইন্ডার (1200W)</h3>
+                <ul class="product-features">
+                    <li>স্টেইনলেস স্টিল ব্লেড ও কাপ</li>
+                    <li>মসলা, কফি, চাল গুঁড়া করার জন্য</li>
+                    <li>হাই পাওয়ার মোটর</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳৯৫০</span>
+                    <span class="old-price">৳১,২৫০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+        <!-- Product 32: Rechargeable Fan -->
+        <article class="product-card">
+            <img class="product-image" src="https://nexhut.shop/wp-content/uploads/2026/04/Screenshot_23.png" alt="Duration Power Rechargeable Fan" />
+            <div class="product-details">
+                <h3 class="product-title">Duration Power DP-7605 Rechargeable Table Fan with LED Light</h3>
+                <ul class="product-features">
+                    <li>৩ স্পিড ফ্যান + ইমার্জেন্সি লাইট</li>
+                    <li>4000mAh ব্যাটারি (৪-১৫ ঘণ্টা ব্যাকআপ)</li>
+                    <li>USB চার্জিং ও পোর্টেবল</li>
+                </ul>
+                <div class="price-box">
+                    <span class="current-price">৳১,৪৯০</span>
+                    <span class="old-price">৳২,০০০</span>
+                </div>
+                <button class="btn-order">🛒 অর্ডার করুন</button>
+            </div>
+        </article>
+
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h3>NeXhut</h3>
+            <p>বাংলাদেশের এক নম্বর বিশ্বস্ত অনলাইন গ্যাজেট ও লাইফস্টাইল শপ। আমরা নিশ্চিত করি সেরা পণ্য এবং দ্রুত সেবা।</p>
+        </div>
+        <div class="footer-col">
+            <h3>যোগাযোগ</h3>
+            <p>📍 25/2, Sher-E-Bangla Road, Tannery Mor, Zigatola, Dhanmondi, Dhaka, Bangladesh</p>
+            <p>📞 +880 1580-376097</p>
+            <p>📱 WhatsApp: +880 1400-047002</p>
+        </div>
+        <div class="footer-col">
+            <h3>ক্যাটাগরি</h3>
+            <ul>
+                <li><a href="#">Gadget & Tech</a></li>
+                <li><a href="#">Leather Items</a></li>
+                <li><a href="#">Home Appliances</a></li>
+                <li><a href="#">Lifestyle</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">© 2026 NeXhut. All Rights Reserved.</div>
+</footer>
+
+<!-- Order Modal Popup -->
+<div id="orderModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">×</span>
+        <h2>অর্ডার কনফার্ম করুন</h2>
+        <form id="whatsappForm">
+            <div class="form-group">
+                <label>পণ্যের নাম:</label>
+                <input id="productName" style="background-color: #f9f9f9;" readonly type="text" />
+            </div>
+            <div class="form-group">
+                <label>আপনার নাম:</label>
+                <input id="customerName" required type="text" placeholder="আপনার নাম লিখুন" />
+            </div>
+            <div class="form-group">
+                <label>মোবাইল নম্বর:</label>
+                <input id="customerPhone" required type="tel" placeholder="আপনার মোবাইল নম্বর" />
+            </div>
+            <div class="form-group">
+                <label>সম্পূর্ণ ঠিকানা:</label>
+                <textarea id="customerAddress" required rows="3" placeholder="আপনার ঠিকানা লিখুন"></textarea>
+            </div>
+            <button class="btn-submit" type="submit">WhatsApp এ অর্ডার করুন</button>
+        </form>
+    </div>
+</div>
+
+<!-- JavaScript Logic -->
+<script>
+    // Modal Logic
+    const modal = document.getElementById('orderModal');
+    const productNameInput = document.getElementById('productName');
+    const closeModalBtn = document.querySelector('.close-modal');
+
+    function openModal(productName) {
+        productNameInput.value = productName;
+        modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    // Attach event listeners to all Order buttons
+    const orderButtons = document.querySelectorAll('.btn-order');
+    orderButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const card = this.closest('.product-card');
+            const title = card.querySelector('.product-title').innerText;
+            openModal(title);
+        });
+    });
+
+    // Close modal if clicked on X
+    closeModalBtn.addEventListener('click', closeModal);
+
+    // Close modal if clicked outside
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+
+    // WhatsApp Redirect Logic
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('customerName').value;
+        const phone = document.getElementById('customerPhone').value;
+        const address = document.getElementById('customerAddress').value;
+        const product = document.getElementById('productName').value;
+
+        const whatsappNumber = "8801400047002";
+        const message = `Hello NeXhut, I want to order:%0A%0A🛍️ *Product:* ${product}%0A👤 *Name:* ${name}%0A📞 *Phone:* ${phone}%0A📍 *Address:* ${address}`;
+
+        const url = `https://wa.me/${whatsappNumber}?text=${message}`;
+        window.open(url, '_blank');
+        
+        closeModal();
+    });
+</script>
+
+</body>
+</html>
